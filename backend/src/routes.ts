@@ -1,7 +1,16 @@
-import { Request, Response, Router } from 'express'
+import { Request, Response, Router } from 'express';
+import { Students } from './app/models/Student';
 
-export const routes = Router()
+//@ts-ignore
+export const routes = new Router();
 
-routes.get('/', (req: Request, res: Response) => {
-	res.json({ message: 'Server is running'})
-})
+routes.get('/', async (req: Request, res: Response) => {
+	const student = await Students.create({
+		name: 'Celio',
+		email: 'celio@hotmail.com',
+		idade: 26,
+		peso: 75,
+		altura: 178,
+	});
+	res.json(student);
+});

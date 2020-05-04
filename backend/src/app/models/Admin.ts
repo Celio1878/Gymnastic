@@ -4,6 +4,7 @@ import Sequelize, { Model } from 'sequelize';
 export default class Admin extends Model {
 	password_hash!: string;
 	static init(connect: any) {
+		//@ts-ignore
 		super.init(
 			{
 				name: Sequelize.STRING,
