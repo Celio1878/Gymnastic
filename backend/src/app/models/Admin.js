@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import Sequelize, { Model } from 'sequelize';
 
 export default class Admin extends Model {
-	static init() {
+	static init(connect) {
 		super.init(
 			{
 				name: Sequelize.STRING,

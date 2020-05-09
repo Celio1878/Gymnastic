@@ -1,8 +1,7 @@
 import { Router } from 'express';
 import { Students } from './app/models/Student';
 
-//@ts-ignore
-export const routes = new Router();
+const routes = new Router();
 
 routes.get('/', async (req, res) => {
 	const student = await Students.create({
@@ -14,3 +13,5 @@ routes.get('/', async (req, res) => {
 	});
 	res.json(student);
 });
+
+export default routes
