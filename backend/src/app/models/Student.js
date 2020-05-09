@@ -1,8 +1,7 @@
 import Sequelize, { Model } from 'sequelize';
 
 export class Students extends Model {
-	static init(connect: any) {
-		//@ts-ignore
+	static init() {
 		super.init(
 			{
 				name: Sequelize.STRING,

@@ -1,8 +1,9 @@
 import Sequelize from 'sequelize';
 import Admin from '../app/models/Admin';
-import * as databaseConfig from '../config/database';
+import databaseConfig from '../config/database';
 
 const models = [Admin];
+
 class Database {
 	constructor() {
 		this.init();

@@ -2,9 +2,7 @@ import bcrypt from 'bcrypt';
 import Sequelize, { Model } from 'sequelize';
 
 export default class Admin extends Model {
-	password_hash!: string;
-	static init(connect: any) {
-		//@ts-ignore
+	static init() {
 		super.init(
 			{
 				name: Sequelize.STRING,
@@ -16,7 +14,7 @@ export default class Admin extends Model {
 		return this;
 	}
 
-	checkPassword(password: string) {
+	checkPassword(password) {
 		return bcrypt.compare(password, this.password_hash);
 	}
 }
